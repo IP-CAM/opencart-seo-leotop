@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id>SEO LEOTOP</id>
+	<version>1.0</version>
+	<author>Igor Kirsanov</author>
+	<email>opencart@leotop.org</email>
+	
+
+	<file path="catalog/controller/product/category.php">
+			<operation>
+				<search position="replace"><![CDATA['href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url),]]></search>
+				<add><![CDATA[
+					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url),
+					]]></add>
+				</operation>
+			</file>
+
+</modification>
