@@ -53,3 +53,19 @@ To create SEO URLs this way your code needs to be:
                         $url->addRewrite($rewriter);
                 }
                 $url->link('product/product', 'product_id=' . $row['product_id']);
+
+In file /admin/controller/sale/order.php line 1672
+
+replace 
+'href'     		   => $url->link('product/product', '&product_id=' . $product['product_id'], 'SSL')
+
+to
+'href'     		   => $url->link('product/product', '&product_id=' . $product['product_id'], 'SSL')
+
+In file /admin/controller/sale/order.php line 1663
+
+over
+$this->data['products'][] = array(
+
+add
+$url = new Url(HTTP_CATALOG, $this->config->get('config_secure') ? HTTP_CATALOG : HTTPS_CATALOG);
